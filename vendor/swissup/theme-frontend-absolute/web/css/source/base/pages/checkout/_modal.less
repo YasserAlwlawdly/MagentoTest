@@ -1,0 +1,17 @@
+& when (@absolute-checkout = true) {
+    .page-layout-checkout {
+        .modal-inner-wrap,
+        .modal-popup.modal-slide .modal-inner-wrap[class] {
+            background: @absolute-checkout-section__background;
+        }
+        .modal-popup {
+            .modal-title,
+            .modal-footer {
+                border-color: #eaeaea;
+            }
+            .form-shipping-address {
+                max-width: none;
+            }
+        }
+    }
+}

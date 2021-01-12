@@ -1,0 +1,43 @@
+& when (@absolute-checkout = true) {
+    .page-layout-checkout {
+        .opc-wrapper {
+            .shipping-address-item {
+                &::before {
+                    display: none;
+                }
+            }
+        }
+        // shipping methods
+        .methods-shipping {
+            border: 0;
+        }
+        .checkout-shipping-method {
+            .step-content {
+                margin: 0;
+            }
+        }
+        .table-checkout-shipping-method tbody td {
+            border: 0;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    & when (@absolute-checkout = true) {
+        .shipping-policy-block.field-tooltip {
+            top: 12px;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    & when (@absolute-checkout = true) {
+        .opc-wrapper {
+            .shipping-address-item {
+                .lib-css(width, @absolute-checkout-shipping-item__width);
+            }
+        }
+    }
+}

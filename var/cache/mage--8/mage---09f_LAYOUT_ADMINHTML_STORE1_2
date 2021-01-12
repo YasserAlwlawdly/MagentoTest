@@ -1,4 +1,4 @@
-a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1610447814;s:6:"expire";i:9999999999;s:4:"tags";s:37:"09f_LAYOUT_GENERAL_CACHE_TAG,09f_MAGE";}
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1610470239;s:6:"expire";i:9999999999;s:4:"tags";s:37:"09f_LAYOUT_GENERAL_CACHE_TAG,09f_MAGE";}
 <?xml version="1.0"?>
 <layouts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><handle id="adminhtml_dashboard_index"><body>
    <referenceContainer name="content">
@@ -8037,6 +8037,36 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1610447814;s:6:"expire";i:9999999999;s:4:"t
          <argument name="template" xsi:type="string">Magento_Vault::form/vault.phtml</argument>
       </action>
    </referenceBlock>
+</body>
+</handle><handle id="default"><head>
+   <css src="Swissup_Core::css/swissup.css"/>
+</head>
+</handle><handle id="swissup_installer_index"><body>
+   <referenceContainer name="content">
+      <uiComponent name="swissup_installer_listing"/>
+   </referenceContainer>
+</body>
+</handle><handle id="adminhtml_system_config_edit"><head>
+   <css src="jquery/colorpicker/css/colorpicker.css"/>
+   <css src="Swissup_ThemeEditor::css/theme-section.css"/>
+   <css src="Swissup_ThemeEditor::css/preview.css"/>
+   <css src="Swissup_ThemeEditor::css/header_conf.css"/>
+   <css src="Swissup_ThemeEditor::lib/dragula/dragula.css"/>
+</head>
+</handle><handle id="theme_design_config_edit"><body>
+   <referenceContainer name="content">
+      <block class="Magento\Framework\View\Element\Text" name="fix.fileUploader">
+         <arguments>
+            <argument name="text" xsi:type="string">
+
+&lt;script type="text/javascript"&gt;
+    require(['prototype'], function(){});
+&lt;/script&gt;
+
+                    </argument>
+         </arguments>
+      </block>
+   </referenceContainer>
 </body>
 </handle><layout id="sales_order_addcomment"><referenceContainer name="root">
    <block class="Magento\Framework\View\Element\Messages" name="messages" as="messages" ifconfig="tax/vertex_settings/enable_vertex" template="Vertex_Tax::order/view/messages.phtml"/>

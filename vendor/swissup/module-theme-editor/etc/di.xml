@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Theme\Model\Design\Config\MetadataProvider">
+        <arguments>
+            <argument name="metadata" xsi:type="array">
+                <item name="header_logo_alt_src" xsi:type="array">
+                    <item name="path" xsi:type="string">design/header/logo_alt_src</item>
+                    <item name="fieldset" xsi:type="string">other_settings/header</item>
+                    <item name="backend_model" xsi:type="string">Magento\Theme\Model\Design\Backend\Logo</item>
+                    <item name="base_url" xsi:type="array">
+                        <item name="type" xsi:type="string">media</item>
+                        <item name="scope_info" xsi:type="string">1</item>
+                        <item name="value" xsi:type="string">logo</item>
+                    </item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Swissup\ThemeEditor\Model\Config\Backend\PageLayout">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="themeFactory" xsi:type="object">Magento\Theme\Model\ThemeFactory</item>
+                <item name="themeCode" xsi:type="null" />
+                <item name="configValueFactory" xsi:type="object">Magento\Framework\App\Config\ValueFactory</item>
+                <item name="layoutLinkFactory" xsi:type="object">Magento\Widget\Model\Layout\LinkFactory</item>
+                <item name="layoutUpdateFactory" xsi:type="object">Magento\Widget\Model\Layout\UpdateFactory</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Swissup\ThemeEditor\Model\Config\Backend\ColumnsCount">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="themeFactory" xsi:type="object">Magento\Theme\Model\ThemeFactory</item>
+                <item name="themeCode" xsi:type="null" />
+                <item name="configValueFactory" xsi:type="object">Magento\Framework\App\Config\ValueFactory</item>
+                <item name="layoutLinkFactory" xsi:type="object">Magento\Widget\Model\Layout\LinkFactory</item>
+                <item name="layoutUpdateFactory" xsi:type="object">Magento\Widget\Model\Layout\UpdateFactory</item>
+                <item name="mathRandom" xsi:type="object">Magento\Framework\Math\Random</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Themes">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="themeCollectionFactory" xsi:type="object">Magento\Theme\Model\ResourceModel\Theme\CollectionFactory</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

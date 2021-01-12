@@ -1,0 +1,55 @@
+& when (@absolute-checkout = true) {
+    @-webkit-keyframes absolute-checkout-spin {
+        to {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes absolute-checkout-spin {
+        to {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    .page-layout-checkout:not(.firecheckout) {
+        .loading-mask .loader {
+            img {
+                visibility: hidden;
+                opacity: 0;
+                display: none;
+            }
+
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            transform: none;
+
+            &:before {
+                background: none; // Hide default spinner image
+                // Don't use this element for animation because it can show the text
+            }
+            &:after {
+                content: '';
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: @absolute-checkout-loader__size;
+                height: @absolute-checkout-loader__size;
+                margin-left: -(round(@absolute-checkout-loader__size / 2));
+                margin-top: -(round(@absolute-checkout-loader__size / 2));
+
+                -webkit-animation: absolute-checkout-spin 0.7s linear infinite;
+                animation: absolute-checkout-spin 0.7s linear infinite;
+                border: @absolute-checkout-loader__border-width solid @absolute-checkout-loader__border-secondary-color;
+                border-top: @absolute-checkout-loader__border-width solid @absolute-checkout-loader__border-color;
+                border-radius: 50%;
+                cursor: wait;
+            }
+        }
+    }
+}

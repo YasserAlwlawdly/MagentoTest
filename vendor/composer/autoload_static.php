@@ -268,6 +268,7 @@ class ComposerStaticInit5e7ed16e24c76667a6659dcce41bd9d5
         '3e066e7b5a29d63f855a7fafac672b08' => __DIR__ . '/..' . '/magento/module-weee/registration.php',
         '056cd8d2398ceabe9e3cff88f4cf877b' => __DIR__ . '/..' . '/magento/theme-frontend-blank/registration.php',
         '2a3c2110e8e0295330dc3d11a4cbc4cb' => __DIR__ . '/..' . '/php-webdriver/webdriver/lib/Exception/TimeoutException.php',
+        '19e78ed25b5cdad498e6c4f860207e33' => __DIR__ . '/..' . '/swissup/module-codemirror/registration.php',
         'a71e87d464734a5d49a3c79bab86715f' => __DIR__ . '/..' . '/vertex/module-address-validation-api/registration.php',
         '940abd8fb01ee76a36b44f35dcf9783b' => __DIR__ . '/..' . '/weew/helpers-array/src/array.php',
         'f3cd155021d4ab171214e8fdcd3c1eb7' => __DIR__ . '/..' . '/amzn/amazon-pay-module/registration.php',
@@ -355,6 +356,8 @@ class ComposerStaticInit5e7ed16e24c76667a6659dcce41bd9d5
         'b023fd11134400033a2200c4032efd82' => __DIR__ . '/..' . '/magento/module-securitytxt/registration.php',
         '87bb82aba4e6954227316088ec049d42' => __DIR__ . '/..' . '/magento/module-translation/registration.php',
         '7c4937fd3269103dd7ef4dd0720a571d' => __DIR__ . '/..' . '/magento/module-two-factor-auth/registration.php',
+        'feb21ef5dcabb4d2c7710be9f670692b' => __DIR__ . '/..' . '/swissup/module-core/registration.php',
+        '2f7e4ad87ddce0980c35ca7561be5a11' => __DIR__ . '/..' . '/swissup/module-theme-editor/registration.php',
         'b3af4141c2b6c2616b0e9b1109f7c2dd' => __DIR__ . '/..' . '/temando/module-shipping-remover/registration.php',
         '7f6c811c3852a4483827b42c41b21e2f' => __DIR__ . '/..' . '/vertex/module-address-validation/registration.php',
         '71d43889e3a64a974ddb1497a54ed961' => __DIR__ . '/..' . '/yotpo/magento2-module-yotpo-reviews/registration.php',
@@ -475,6 +478,10 @@ class ComposerStaticInit5e7ed16e24c76667a6659dcce41bd9d5
         '3109cb1a231dcd04bee1f9f620d46975' => __DIR__ . '/..' . '/paragonie/sodium_compat/autoload.php',
         '7adedf5aab7954091befcc50d50f5120' => __DIR__ . '/..' . '/paypal/module-braintree-graph-ql/registration.php',
         'aa75ea0761a2f40c1f3b32ad314f86c4' => __DIR__ . '/..' . '/phpseclib/mcrypt_compat/lib/mcrypt.php',
+        'f21b1f71b7477cbc44a9e42d5697eab6' => __DIR__ . '/..' . '/swissup/module-font-awesome/registration.php',
+        '614c4b69344eb3ef63e40f4eb9bddff5' => __DIR__ . '/..' . '/swissup/module-slick-carousel/registration.php',
+        'f79681aa9886a219c09d6b17c3c286a9' => __DIR__ . '/..' . '/swissup/module-theme-editor-swissup-absolute/registration.php',
+        '0298341d626d4d573ded3c80333e26e9' => __DIR__ . '/..' . '/swissup/theme-frontend-absolute/registration.php',
         '43a898c2b52882ecca1f7b0558d3af2c' => __DIR__ . '/..' . '/magento/composer-root-update-plugin/registration.php',
         'eda65932675b68b5aee4503e0762d64d' => __DIR__ . '/..' . '/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/_bootstrap.php',
         'b4cf39431a4b949eea8aa69ebb3d39da' => __DIR__ . '/../..' . '/app/etc/NonComposerComponentRegistration.php',
@@ -547,6 +554,12 @@ class ComposerStaticInit5e7ed16e24c76667a6659dcce41bd9d5
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Component\\Config\\' => 25,
+            'Swissup\\ThemeEditor\\' => 20,
+            'Swissup\\ThemeEditorSwissupAbsolute\\' => 35,
+            'Swissup\\SlickCarousel\\' => 22,
+            'Swissup\\FontAwesome\\' => 20,
+            'Swissup\\Core\\' => 13,
+            'Swissup\\Codemirror\\' => 19,
             'Seld\\PharUtils\\' => 15,
             'Seld\\JsonLint\\' => 14,
             'Safe\\' => 5,
@@ -1205,6 +1218,30 @@ class ComposerStaticInit5e7ed16e24c76667a6659dcce41bd9d5
         'Symfony\\Component\\Config\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/config',
+        ),
+        'Swissup\\ThemeEditor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/swissup/module-theme-editor',
+        ),
+        'Swissup\\ThemeEditorSwissupAbsolute\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/swissup/module-theme-editor-swissup-absolute',
+        ),
+        'Swissup\\SlickCarousel\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/swissup/module-slick-carousel',
+        ),
+        'Swissup\\FontAwesome\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/swissup/module-font-awesome',
+        ),
+        'Swissup\\Core\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/swissup/module-core',
+        ),
+        'Swissup\\Codemirror\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/swissup/module-codemirror',
         ),
         'Seld\\PharUtils\\' => 
         array (

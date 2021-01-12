@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config>
+    <packages>
+        <package>swissup/absolute-metapackage</package>
+        <package>swissup/theme-frontend-absolute</package>
+    </packages>
+
+    <fields>
+        <field name="theme" title="Select Theme">
+            <option title="Absolute Theme">swissup/theme-frontend-absolute</option>
+        </field>
+    </fields>
+
+    <commands>
+        <conditions>
+            <param name="theme">swissup/theme-frontend-absolute</param>
+        </conditions>
+        <include path="commands/config.xml"/>
+        <include path="commands/cms_page.xml"/>
+        <include path="commands/cms_block.xml"/>
+        <include path="commands/product_attribute.xml"/>
+    </commands>
+</config>

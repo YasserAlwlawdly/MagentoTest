@@ -1,0 +1,24 @@
+.account-nav {
+    // hide empty block. @see https://github.com/magento/magento2/pull/23040
+    display: none;
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .page-main {
+        .account & {
+            padding-top: 50px;
+        }
+    }
+    .block-collapsible-nav {
+        right: 0;
+        margin: 15px 15px;
+        padding: 0 !important;
+        width: auto;
+        .title {
+            border: 0;
+        }
+        .content {
+            border: 0;
+        }
+    }
+}

@@ -1,0 +1,80 @@
+// prevent styles jumping after slider initialization
+.slick-slider:not(.slick-initialized) {
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+    > * {
+        flex-shrink: 0;
+        flex-grow: 0;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+}
+.slick-slider {
+    .slick-slide {
+        padding: 10px;
+        box-sizing: border-box;
+        .slide {
+            // in case of multiple rows
+            box-sizing: border-box;
+        }
+
+        img {
+            height: auto;
+        }
+    }
+}
+
+.slick-prev,
+.slick-next {
+    z-index: 10; // Highlight compatibility
+}
+.slick-prev,
+.slick-next,
+.slick-dots li button {
+    .slick-reset-button();
+}
+.slick-prev:before,
+.slick-next:before {
+    color: #aaa;
+}
+
+// Prevent horizontal scrollbar on small screens
+.slick-prev {
+    left: 5px;
+}
+.slick-next {
+    right: 5px;
+}
+
+.slick-dots {
+    box-sizing: border-box;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slick-reset-button() {
+    box-shadow: none !important;
+    border: none !important;
+    &:hover,
+    &:focus,
+    &:active {
+        border: none;
+    }
+}
+
+// Bugfix for wide page: https://github.com/kenwheeler/slick/issues/1195
+// need to give `min-width: 0` to child of `display: flex` element
+.columns .column.main {
+    min-width: 0;
+}
+
+// reset Luma's styles
+.page-layout-1column .block.widget .products-grid .slick-track {
+    // fix box-shadow hover effect around item
+    padding: 10px 0 0 10px;
+}
+.page-layout-1column .block.widget .products-grid .slick-slider .product-item,
+.page-layout-1column .block.widget .products-grid .slick-slider .product-item:nth-child(4n + 1) {
+    margin: 0;
+}

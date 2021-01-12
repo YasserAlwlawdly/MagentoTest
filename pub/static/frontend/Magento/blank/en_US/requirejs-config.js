@@ -332,8 +332,11 @@ require.config(config);
  */
 
 var config = {
-    paths: {
-        'jquery/jquery-storageapi': 'Magento_Cookie/js/jquery.storageapi.extended'
+    map: {
+        '*': {
+            requireCookie: 'Magento_Cookie/js/require-cookie',
+            cookieNotices: 'Magento_Cookie/js/notices'
+        }
     }
 };
 
@@ -346,11 +349,8 @@ require.config(config);
  */
 
 var config = {
-    map: {
-        '*': {
-            requireCookie: 'Magento_Cookie/js/require-cookie',
-            cookieNotices: 'Magento_Cookie/js/notices'
-        }
+    paths: {
+        'jquery/jquery-storageapi': 'Magento_Cookie/js/jquery.storageapi.extended'
     }
 };
 
@@ -672,8 +672,9 @@ require.config(config);
 var config = {
     map: {
         '*': {
-            transparent: 'Magento_Payment/js/transparent',
-            'Magento_Payment/transparent': 'Magento_Payment/js/transparent'
+            orderReview: 'Magento_Paypal/js/order-review',
+            'Magento_Paypal/order-review': 'Magento_Paypal/js/order-review',
+            paypalCheckout: 'Magento_Paypal/js/paypal-checkout'
         }
     }
 };
@@ -689,9 +690,8 @@ require.config(config);
 var config = {
     map: {
         '*': {
-            orderReview: 'Magento_Paypal/js/order-review',
-            'Magento_Paypal/order-review': 'Magento_Paypal/js/order-review',
-            paypalCheckout: 'Magento_Paypal/js/paypal-checkout'
+            transparent: 'Magento_Payment/js/transparent',
+            'Magento_Payment/transparent': 'Magento_Payment/js/transparent'
         }
     }
 };
@@ -1065,6 +1065,18 @@ var config = {
         "braintreeAch": "https://js.braintreegateway.com/web/3.63.0/js/us-bank-account.min",
         "braintreeLpm": "https://js.braintreegateway.com/web/3.63.0/js/local-payment.min",
         "googlePayLibrary": "https://pay.google.com/gp/p/js/pay"
+    }
+};
+
+require.config(config);
+})();
+(function() {
+var config = {
+    map: {
+        '*': {
+            'slick': 'Swissup_SlickCarousel/js/slick',
+            'slickwrapper': 'Swissup_SlickCarousel/js/slickwrapper'
+        }
     }
 };
 

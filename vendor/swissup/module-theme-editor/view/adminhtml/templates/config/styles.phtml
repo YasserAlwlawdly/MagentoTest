@@ -1,0 +1,17 @@
+<?php
+    $columnsWidth = $block->getContentWidth() / 1920 * 100;
+    $headerWidth = $block->getHeaderWidth() / 1920 * 100;
+    $footerWidth = $block->getFooterWidth() / 1920 * 100;
+?>
+<style>
+    ._header {
+        max-width: <?= $headerWidth ? ($headerWidth . '%') : 'none' ?>;
+    }
+    ._columns {
+        max-width: <?= $columnsWidth ?>%;
+    }
+
+    ._footer {
+        max-width: <?= $footerWidth ? ($footerWidth . '%') : 'none' ?>;
+    }
+</style>

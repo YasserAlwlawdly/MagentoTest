@@ -1,0 +1,199 @@
+//
+//  Variables
+//  _____________________________________________
+
+//
+//  Colors
+//  _____________________________________________
+@main-theme-color: #00628e;
+@main-theme-accent-color: #26cb21;
+
+//
+//  Timers
+//  _____________________________________________
+
+@transition-time__xs: 0.1s;
+@transition-time__s: 0.2s;
+@transition-time__m: 0.3s;
+@transition-time__l: 0.5s;
+@transition-time__xl: 1s;
+
+@header-search__height: 32px;
+@header-search__border-radius: 5px;
+@header-search__box-shadow: 0 0 10px rgba(0,0,0,0.15);
+
+//
+//  Search
+//  _____________________________________________
+@ajaxsearch-input__border: 0;
+@ajaxsearch-input__border-radius: 5px;
+@ajaxsearch-dropdown__border-color: #fff;
+@ajaxsearch-dropdown__border: 0;
+@ajaxsearch-dropdown__border-radius: 2px;
+@ajaxsearch-dropdown__box-shadow: 0 3px 17px rgba(0, 0, 0, 0.15);
+@ajaxsearch-folded__background: none;
+@ajaxsearch-folded-icon-search__color: #fff;
+@ajaxsearch-folded-input__box-shadow: none;
+@ajaxsearch-fullscreen-form__initial-positioning: 'absolute';
+
+//
+//  Dropdowns
+//  _____________________________________________
+@dropdown-list__border: 0;
+@dropdown-list__shadow: 0 3px 17px rgba(0, 0, 0, 0.15);
+@dropdown-list-pointer__border: #fff;
+
+//
+//  Navigation
+//  _____________________________________________
+@navigation-desktop-item-margin: 0;
+
+@navigation-desktop__font-weight: @font-weight__regular;
+@navigation-desktop-level0-item__margin: 0;
+@navigation-level0-item__border: 1px solid #046c96;
+@navigation-level0-item_second__border__color: #103261;
+
+@navigation-desktop-level0-item__active__border-width: 0;
+@navigation-desktop-level0-item__padding: 0 15px;
+@navigation-desktop-level0-item__color: #c3d5e3;
+@navigation-desktop-level0-item__hover__color: #fff;
+@navigation-desktop-level0-item__active__color: #fff;
+
+@submenu-desktop__box-shadow: 0 0 10px rgba(0,0,0,0.15);
+
+@submenu-desktop-item__color: @color-black;
+@submenu-desktop-item__hover__color: @color-black;
+@submenu-desktop-item__hover__background: @color-white-dark-smoke;
+@submenu-desktop-item__active__color: @color-black;
+@submenu-desktop-item__active__border-width: 0;
+
+@navigation-desktop-level0-item__active__border-color: @main-theme-accent-color;
+@navigation-level0-item__active__border-color: @main-theme-accent-color;
+@submenu-item__active__border-color: @main-theme-accent-color;
+@submenu-desktop-item__active__border-color: @main-theme-accent-color;
+//
+//  Breadcrumbs
+//  _____________________________________________
+@breadcrumbs__container-margin: 0 auto;
+
+//
+//  Compare
+//  _____________________________________________
+@compare-toolbar__height: 40px;
+@compare-toolbar__background: @main-theme-accent-color;
+@compare-toolbar__color: #fff;
+@compare-toolbar__box-shadow: false;
+@compare-toolbar__border: 1px solid @compare-toolbar__background;
+@compare-toolbar__border-width: 1px 1px 0 1px;
+@compare-toolbar__border-radius: 5px 5px 0 0;
+@compare-toolbar__hover__background: shade(@compare-toolbar__background, 2%);
+@compare-toolbar__hover__color: @compare-toolbar__color;
+@compare-toolbar__hover__box-shadow: @compare-toolbar__box-shadow;
+
+//
+//  Headings
+//  _____________________________________________
+
+@headings__color: #459b06;       //Color of headers and content wide blocks
+@h1__margin-bottom__desktop: 20px;
+@headings_text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 0 rgba(0, 0, 0, 0.7);
+
+//
+//  Buttons
+//  _____________________________________________
+@button__border-radius: 5px;
+
+@button-primary__gradient: true;
+@button-primary__gradient-direction: vertical;
+
+@button-primary__background: @color-blue1;
+@button-primary__border: 0px solid transparent;
+@button-primary__color: @color-white;
+@button-primary__gradient-color-start: #707070;
+@button-primary__gradient-color-end: #404040;
+
+@button-primary__hover__background: @color-blue2;
+@button-primary__hover__border: 0px solid transparent;
+@button-primary__hover__color: @button-primary__color;
+@button-primary__hover__gradient-color-start: #505050;
+@button-primary__hover__gradient-color-end: #404040;
+
+@button-primary__active__background: @button-primary__hover__background;
+@button-primary__active__border: @button-primary__hover__border;
+@button-primary__active__color: @button-primary__color;
+@button-primary__active__gradient-color-start: #505050;
+@button-primary__active__gradient-color-end: #404040;
+
+//
+//  Footer
+//  _____________________________________________
+@copyright__background-color: transparent;
+@footer-link_color: #d5e1e9;
+
+//
+//  Blocks
+//  _____________________________________________
+
+@block_box-shadow: 0 1px 0px 0 rgba(0, 0, 0, 0.25);
+
+//
+// Customer account
+// ______________________________________________
+@collapsible-nav-background: false;
+@collapsible-nav-current-border-color: @main-theme-accent-color;
+
+//
+// Checkout
+// ______________________________________________
+// fix to prevent horizontal scrolling
+@checkout-step-content-mobile__background: #fff;
+@checkout-payment-method-title-mobile__padding: @checkout-step-content-mobile__margin-s;
+@checkout-tooltip-content__background-color: #fff;
+@checkout-tooltip-content__border-color: #f2f5f7;
+@checkout-tooltip-content__drop-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
+@checkout-tooltip-content__active__border-color: @checkout-tooltip-content__border-color;
+
+@absolute-checkout: true;
+@absolute-checkout-layout__max-width: 1024px;
+@absolute-checkout-page-header__box-shadow: none;
+
+// Estimation costs
+@absolute-checkout-estimation__background: #fff;
+
+// Sections
+@absolute-checkout-section__background: #fff;
+@absolute-checkout-section__border-color: #f2f5f7;
+@absolute-checkout-section__border-radius: 4px;
+@absolute-checkout-section__border: 1px solid @absolute-checkout-section__border-color;
+@absolute-checkout-section__box-shadow: 0 2px 6px -5px rgba(0, 0, 0, 0.1);
+@absolute-checkout-section__padding: 25px 35px;
+@absolute-checkout-section-title__border: 0;
+@absolute-checkout-section-title__margin: 0;
+@absolute-checkout-section-title__padding: 0 0 15px;
+@absolute-checkout-section-title__font-size: 2.6rem;
+@absolute-checkout-section-title__font-weight: 600;
+
+// Inputs
+@absolute-checkout-field__height: 41px;
+@absolute-checkout-field__border-color: #ddd;
+@absolute-checkout-field__border: 1px solid @absolute-checkout-field__border-color;
+@absolute-checkout-field__padding: 2px 10px;
+@absolute-checkout-field__border-radius: 2px;
+@absolute-checkout-field__focus__border-color: #bbb;
+@absolute-checkout-field__margin-left: 5px;
+@absolute-checkout-field__margin-right: 5px;
+@absolute-checkout-field__margin-top: 0;
+@absolute-checkout-field__margin-bottom: 20px;
+@absolute-checkout-field__margin: @absolute-checkout-field__margin-top @absolute-checkout-field__margin-right @absolute-checkout-field__margin-bottom @absolute-checkout-field__margin-left;
+@absolute-checkout-field__margin-x: @absolute-checkout-field__margin-left + @absolute-checkout-field__margin-right;
+@absolute-checkout-field__per-line: 2;
+@absolute-checkout-field__width: ~"calc(100%/@{absolute-checkout-field__per-line} - @{absolute-checkout-field__margin-x})";
+
+// Address
+@absolute-checkout-shipping-item__width: 100%/2;
+
+// Loaders
+@absolute-checkout-loader__size: 30px;
+@absolute-checkout-loader__border-width: 2px;
+@absolute-checkout-loader__border-color: #25cb22;
+@absolute-checkout-loader__border-secondary-color: transparent;

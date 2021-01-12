@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header-wrapper">
+            <block class="Magento\Cms\Block\Block" name="slogan" after="logo">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">slogan</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_img_width" xsi:type="number">224</argument>
+                <argument name="logo_img_height" xsi:type="number">50</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceContainer name="footer">
+            <referenceBlock name="form.subscribe" remove="true"/>
+            <referenceBlock name="footer_links" remove="true"/>
+            <block class="Magento\Cms\Block\Block" name="footer_links_block">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer_links_block</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Cms\Block\Block" name="footer_additional">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer_additional</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="sidebar.additional">
+            <block class="Magento\Reports\Block\Product\Viewed" name="recently.viewed" as="recently_viewed" template="widget/viewed/column/viewed_names_list.phtml"/>
+        </referenceContainer>
+        <move element="header.links" destination="header-wrapper" />
+        <move element="store_switcher" destination="footer" after="-" />
+    </body>
+</page>

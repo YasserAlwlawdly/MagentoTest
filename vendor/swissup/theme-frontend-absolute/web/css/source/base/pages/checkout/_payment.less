@@ -1,0 +1,53 @@
+& when (@absolute-checkout = true) {
+    .page-layout-checkout {
+        .checkout-payment-method {
+            .fieldset {
+                > br {
+                    display: none;
+                }
+            }
+            .field-select-billing {
+                margin: @absolute-checkout-field__margin;
+                margin-top: 8px;
+            }
+            .field-select-billing,
+            .billing-address-form {
+                max-width: none;
+            }
+            .payment-method + .payment-method .payment-method-title,
+            .payment-option-title {
+                border: 0;
+            }
+            .payment-methods {
+                margin: 0;
+            }
+            .opc-payment {
+                margin-bottom: 20px;
+            }
+            .payment-method-title {
+                padding: 12px 0;
+            }
+            .payment-method-content {
+                #po_number {
+                    margin-bottom: 0;
+                }
+                .ccard > .field.cvv > .control {
+                    padding-right: 0;
+                }
+            }
+            .ccard .fields > .year {
+                padding: 0;
+                padding-left: 5px;
+            }
+            .payment-option {
+                margin: 0;
+                &-title {
+                    padding: 5px 0;
+                }
+                &-content {
+                    padding: 5px 5px 10px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    & when (@absolute-checkout = true) {
+        .page-layout-checkout {
+            .authentication-dropdown {
+                border-color: #ddd;
+                border-radius: 4px;
+                top: ~"calc(100% + 3px)";
+                .modal-inner-wrap {
+                    border-radius: 4px;
+                }
+            }
+        }
+    }
+}

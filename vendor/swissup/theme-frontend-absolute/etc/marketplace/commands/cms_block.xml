@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<config>
+    <command class="Swissup\Marketplace\Installer\Command\CmsBlock">
+        <data>
+            <item>
+                <item name="title">slogan</item>
+                <item name="identifier">slogan</item>
+                <item name="content" helper="Swissup\Marketplace\Installer\Helper\Renderer::render">
+                    <param name="path" type="path">content/cms_block/slogan.html</param>
+                </item>
+            </item>
+            <item>
+                <item name="title">homepage_callout</item>
+                <item name="identifier">homepage_callout</item>
+                <item name="content" helper="Swissup\Marketplace\Installer\Helper\Renderer::render">
+                    <param name="path" type="path">content/cms_block/home_callout.html</param>
+                </item>
+            </item>
+            <item>
+                <item name="title">footer_contacts</item>
+                <item name="identifier">footer_contacts</item>
+                <item name="content" helper="Swissup\Marketplace\Installer\Helper\Renderer::render">
+                    <param name="path" type="path">content/cms_block/footer_contacts.html</param>
+                </item>
+            </item>
+            <item>
+                <item name="title">footer_additional</item>
+                <item name="identifier">footer_additional</item>
+                <item name="content" helper="Swissup\Marketplace\Installer\Helper\Renderer::render">
+                    <param name="path" type="path">content/cms_block/footer_additional.html</param>
+                </item>
+            </item>
+            <item>
+                <item name="title">footer_links_block</item>
+                <item name="identifier">footer_links_block</item>
+                <item name="content" helper="Swissup\Marketplace\Installer\Helper\Renderer::render">
+                    <param name="path" type="path">content/cms_block/footer_links.html</param>
+                </item>
+            </item>
+            <item>
+                <item name="title">footer_payments</item>
+                <item name="identifier">footer_payments</item>
+                <item name="content" helper="Swissup\Marketplace\Installer\Helper\Renderer::render">
+                    <param name="path" type="path">content/cms_block/footer_payments.html</param>
+                </item>
+            </item>
+            <item>
+                <item name="title">featured</item>
+                <item name="identifier">featured</item>
+                <item name="content" helper="Swissup\Marketplace\Installer\Helper\Renderer::render">
+                    <param name="path" type="path">content/cms_block/featured_products.html</param>
+                </item>
+            </item>
+        </data>
+    </command>
+</config>

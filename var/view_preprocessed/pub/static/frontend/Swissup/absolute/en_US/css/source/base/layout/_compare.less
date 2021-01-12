@@ -1,0 +1,86 @@
+ul.compare.wrapper {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .catalog-product_compare-index &,
+    .catalog-product-compare-index &,
+    .checkout-index-index & {
+        display: none;
+    }
+
+    li {
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+    }
+
+    .action.compare {
+        z-index: 20;
+        position: fixed;
+        right: 0;
+        bottom: 300px; // don't use percent to prevent jumping on mobile devices, when address bar gets hidden
+        /* Slow scrolling performance: https://stackoverflow.com/a/15147497; */
+        -webkit-backface-visibility: hidden;
+        -webkit-perspective: 1000;
+
+        transition: background 200ms linear;
+        transform: rotate(-90deg);
+        transform-origin: 100% 100%;
+
+        .lib-css(height, @compare-toolbar__height);
+        .lib-css(line-height, @compare-toolbar__height);
+        .lib-css(box-shadow, @compare-toolbar__box-shadow);
+        .lib-css(border, @compare-toolbar__border);
+        border-width: @compare-toolbar__border-width;
+        border-radius: @compare-toolbar__border-radius;
+
+        display: block;
+        padding: 0 15px;
+        box-sizing: border-box;
+        color: @compare-toolbar__color;
+        background: @compare-toolbar__background;
+
+        &.no-display {
+            display: none;
+        }
+
+        &:visited {
+            color: @compare-toolbar__color;
+        }
+        &:hover {
+            text-decoration: none;
+            color: @compare-toolbar__hover__color;
+            background: @compare-toolbar__hover__background;
+            .lib-css(box-shadow, @compare-toolbar__hover__box-shadow);
+        }
+    }
+    .counter.qty {
+        display: none;
+        color: inherit;
+        font-weight: bold;
+        margin-left: 3px;
+        &::before {
+            content: '(';
+        }
+        &::after {
+            content: ')';
+        }
+    }
+}
+
+@media (min-height: 490px) {
+    ul.compare.wrapper .action.compare {
+        bottom: 400px;
+    }
+}
+
+@media (min-height: 720px) {
+    ul.compare.wrapper .action.compare {
+        bottom: 500px;
+        .counter.qty {
+            display: inline-block;
+        }
+    }
+}

@@ -1,0 +1,243 @@
+<?php
+    $element = $block->getElement();
+?>
+
+<div id="<?= $element->getHtmlId() ?>" class="_page _product">
+    <div class="_page-wrapper">
+        <div class="_header">
+            <div class="_header-wrapper _watermark" title="Header"></div>
+        </div>
+        <div class="_content">
+            <div class="_columns <?= $block->getPageLayout() ?>">
+                <div class="_main">
+                    <div class="_info-main">
+                        <div class="_name _watermark" title="Product Name"></div>
+                        <div class="_pricesku _watermark" title="Price, SKU"></div>
+                        <div class="_to-cart _watermark" title="To Cart Form"></div>
+                        <div class="_tabs _watermark" title="Product tabs">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="_media">
+                        <div class="_image _watermark" title="Image"></div>
+                        <div class="_thumbs">
+                            <div class="_thumb _watermark" title="Thumb"></div>
+                            <div class="_thumb _watermark" title="Thumb"></div>
+                            <div class="_thumb _watermark" title="Thumb"></div>
+                        </div>
+                        <div class="_to-cart _watermark" title="To Cart Form"></div>
+                    </div>
+                    <div class="_product-blocks">
+                        <div class="_tabs _watermark" title="Product tabs">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="_additional _watermark" title="Related, Upsell, Sold Together blocks etc."></div>
+                    </div>
+                </div>
+                <div class="_left">
+                    <div class="_nav _watermark" title="Some blocks"></div>
+                </div>
+                <div class="_right">
+                    <div class="_nav _watermark" title="Other blocks"></div>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both"></div>
+        <div class="_footer">
+            <div class="_footer-wrapper _watermark" title="Footer"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+require([
+    'Magento_Ui/js/lib/view/utils/async',
+    '!domReady'
+], function ($) {
+    var preview = $('#<?= $element->getHtmlId() ?>'),
+        tbody,
+        contentWidth,
+        maxWidth;
+
+    /**
+     * Update content width in mock-up
+     */
+    function updateContentWidth() {
+        var width;
+
+        if (!contentWidth || !maxWidth) {
+            return;
+        }
+
+        $('._content', preview).attr('class', '_content _' + contentWidth.val());
+        width = (contentWidth.val() === 'limited_width') ? maxWidth.val() : 0;
+        $('._columns', preview).attr('style', width ? ('max-width: ' + (width / 1920 * 100) + '%') : '');
+    }
+
+    tbody = preview.closest('tbody');
+    $.async({
+        selector: '[name$="[content_width][value]"]',
+        ctx: tbody.get(0)
+    }, function (element) {
+        contentWidth = $(element);
+        updateContentWidth();
+        contentWidth.change(updateContentWidth);
+    });
+
+    $.async({
+        selector: '[name$="[max_width][value]"]',
+        ctx: tbody.get(0)
+    }, function (element) {
+        maxWidth = $(element);
+        updateContentWidth();
+        maxWidth.on('change paste keyup', updateContentWidth);
+    });
+
+    $.async({
+        selector: '[name$="[media_width][value]"]',
+        ctx: tbody.get(0)
+    }, function (mediaBlock) {
+        /**
+         * Preview updater
+         */
+        function update() {
+            var value = $(mediaBlock).val() > 100 ? 100 : $(mediaBlock).val();
+
+            if (value == 100) {
+                $('._columns ._main', preview).addClass('_media-100');
+            } else {
+                $('._columns ._main', preview).removeClass('_media-100');
+            }
+
+            $('._media', preview).css('width', value + '%');
+        }
+
+        update();
+        $(mediaBlock).on('change paste keyup', update);
+    });
+
+    $.async({
+        selector: '[name$="[infomain_width][value]"]',
+        ctx: tbody.get(0)
+    }, function (infoMain) {
+        /**
+         * Preview updater
+         */
+        function update() {
+            var value = $(infoMain).val() > 100 ? 100 : $(infoMain).val();
+
+            if (value == 100) {
+                $('._columns ._main', preview).addClass('_infomain-100');
+            } else {
+                $('._columns ._main', preview).removeClass('_infomain-100');
+            }
+
+            $('._info-main', preview).css('width', value + '%');
+        }
+
+        update();
+        $(infoMain).on('change paste keyup', update);
+    });
+
+    /**
+     * PAGE LAYOUT
+     */
+    $.async({
+        selector: '[name$="[page_layout][value]"]',
+        ctx: tbody.get(0)
+    }, function (pageLayout) {
+        /**
+         * Preview updater
+         */
+        function update() {
+            var value = $(pageLayout).val() ?
+                $(pageLayout).val().replace('themeeditor_page', '') :
+                '<?= $block->getPageLayout() ?>';
+
+            $('._columns', preview).attr('class', '_columns ' + value);
+        }
+
+        update();
+        $(pageLayout).change(update);
+    });
+
+    /**
+     * PRODUCT TABS
+     */
+    $.async({
+        selector: '[name$="[product_tabs][fields][position][value]"]',
+        ctx: tbody.get(0)
+    }, function (tabsPosition) {
+        /**
+         * Preview updater
+         */
+        function update() {
+            var value = $(tabsPosition).val() ? $(tabsPosition).val() : '<?= $block->getTabsPosition() ?>';
+
+            preview.attr('data-tabs-position', value);
+        }
+
+        update();
+        $(tabsPosition).change(update);
+    });
+
+    $.async({
+        selector: '[name$="[product_tabs][fields][layout][value]"]',
+        ctx: tbody.get(0)
+    }, function (tabsLayout) {
+        /**
+         * Preview updater
+         */
+        function update() {
+            var value = $(tabsLayout).val() ? $(tabsLayout).val() : '<?= $block->getTabsLayout() ?>';
+
+            preview.attr('data-tabs', value);
+        }
+
+        update();
+        $(tabsLayout).change(update);
+    });
+
+    /**
+     * PRODUCT IMAGE
+     */
+    $.async({
+        selector: '[name$="[product_image][fields][thumbnails][value]"]',
+        ctx: tbody.get(0)
+    }, function (imagePosition) {
+        /**
+         * Preview updater
+         */
+        function update() {
+            var value = $(imagePosition).val() !== 'theme' ?
+                $(imagePosition).val() :
+                '<?= $block->getImagePosition() ?>';
+
+            preview.attr('data-image-position', value);
+        }
+
+        update();
+        $(imagePosition).change(update);
+    });
+
+    /**
+     * ADD TO CART FORM
+     */
+    $.async({
+        selector: '[name$="[product_tocart][fields][position][value]"]',
+        ctx: tbody.get(0)
+    }, function (tocartPosition) {
+        /**
+         * Preview updater
+         */
+        function update() {
+            var value = $(tocartPosition).val() ? $(tocartPosition).val() : '<?= $block->getTocartPosition() ?>';
+
+            preview.attr('data-tocart-position', value);
+        }
+
+        update();
+        $(tocartPosition).change(update);
+    });
+});
+</script>

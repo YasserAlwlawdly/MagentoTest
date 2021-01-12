@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+    <command class="Swissup\Marketplace\Installer\Command\ProductAttribute">
+        <data>
+            <item>
+                <item name="attribute_code">featured</item>
+                <item name="frontend_label">
+                    <item>Featured</item>
+                </item>
+                <item name="default_value">0</item>
+            </item>
+        </data>
+    </command>
+</config>

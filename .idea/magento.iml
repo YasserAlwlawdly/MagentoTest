@@ -554,6 +554,13 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/object-enumerator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/exporter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/finder-facade" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/swissup/theme-frontend-absolute" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/swissup/module-font-awesome" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/swissup/module-slick-carousel" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/swissup/module-theme-editor" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/swissup/module-theme-editor-swissup-absolute" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/swissup/module-codemirror" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/swissup/module-core" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

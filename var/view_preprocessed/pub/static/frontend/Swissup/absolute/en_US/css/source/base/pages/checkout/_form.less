@@ -1,0 +1,70 @@
+& when (@absolute-checkout = true) {
+    .page-layout-checkout {
+        select,
+        textarea,
+        input[type="text"],
+        input[type="password"],
+        input[type="url"],
+        input[type="tel"],
+        input[type="search"],
+        input[type="number"],
+        input[type="datetime"],
+        input[type="email"] {
+            height: @absolute-checkout-field__height;
+            border: @absolute-checkout-field__border;
+            padding: @absolute-checkout-field__padding;
+            border-radius: @absolute-checkout-field__border-radius;
+            &:focus {
+                border-color: @absolute-checkout-field__focus__border-color;
+            }
+        }
+        textarea {
+            height: auto;
+        }
+        .field .control._with-tooltip input {
+            margin-right: 0;
+            width: ~"calc(100% - 25px)";
+        }
+        .field.choice {
+            .field-note {
+                margin: 2px 0 0 22px;
+                font-size: .85em;
+                opacity: .7;
+            }
+        }
+        .opc-wrapper .form-login {
+            margin: @absolute-checkout-field__margin;
+            border-color: @absolute-checkout-section__border-color;
+            padding: 0;
+        }
+        .fieldset.address {
+            > div.field {
+                width: @absolute-checkout-field__width;
+                margin: @absolute-checkout-field__margin;
+                display: inline-block;
+                vertical-align: top;
+                &.choice {
+                    width: 100%;
+                }
+            }
+            > fieldset {
+                margin: @absolute-checkout-field__margin;
+            }
+        }
+
+        .opc-wrapper {
+            .form-login {
+                margin-top: 5px;
+            }
+            .form-login,
+            .form-shipping-address {
+                max-width: none;
+            }
+        }
+
+        .fieldset > .field .fields.group .field,
+        .fieldset > .fields > .field .fields.group .field {
+            float: left;
+        }
+    }
+}

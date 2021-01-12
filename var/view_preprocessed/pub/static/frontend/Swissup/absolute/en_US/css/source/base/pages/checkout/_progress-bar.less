@@ -1,0 +1,35 @@
+& when (@absolute-checkout = true) {
+    .page-layout-checkout {
+        .opc-progress-bar {
+            margin: 0 0 15px 5px;
+            li::before,
+            li:last-child::after,
+            li span::before,
+            li span::after {
+                display: none;
+            }
+            li {
+                display: inline-block;
+                width: auto;
+                font-size: 13px;
+                &::after {
+                    content: '›';
+                    margin: 0 5px 0 2px;
+                    position: static;
+                    border: 0;
+                    height: auto;
+                }
+                span {
+                    font-size: 13px;
+                    padding: 0;
+                    width: auto;
+                }
+                &._complete {
+                    span:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+// Magento bugfix. @see https://github.com/magento/magento2/pull/22258
+@media only screen and (max-width: @screen__m) {
+    .field-tooltip .field-tooltip-content::before {
+        border-bottom-color: @checkout-tooltip-content__border-color;
+    }
+    .field-tooltip .field-tooltip-content::after {
+        border-bottom-color: @checkout-tooltip-content__background-color;
+    }
+}
+.field-tooltip .field-tooltip-content {
+    -webkit-filter: drop-shadow(@checkout-tooltip-content__drop-shadow);
+    filter: drop-shadow(@checkout-tooltip-content__drop-shadow);
+}
+
+& when (@absolute-checkout = true) {
+    .field-tooltip {
+        top: 5px;
+    }
+}
+
+@media (max-width: @screen__m) {
+    & when (@absolute-checkout = true) {
+        .field-tooltip .field-tooltip-content {
+            width: 200px;
+        }
+    }
+}
+@media (max-width: @screen__xs) {
+    & when (@absolute-checkout = true) {
+        .field-tooltip .field-tooltip-content {
+            width: 140px;
+        }
+    }
+}

@@ -1,0 +1,124 @@
+<?php
+    $element = $block->getElement();
+?>
+
+<div id="<?= $element->getHtmlId() ?>" class="_page">
+    <div class="_page-wrapper">
+        <div class="_header">
+            <div class="_header-wrapper _watermark" title="Header"></div>
+        </div>
+        <div class="_content _two_columns_left">
+            <div class="_columns">
+                <div class="_title _watermark" title="Category title"></div>
+                <div class="_desc _before _watermark" title="Description"></div>
+                <div class="_main">
+                    <div class="_desc _before _watermark" title="Description"></div>
+                    <div class="_nav _watermark" title="Layered Navigation"></div>
+                    <div class="_grid _watermark" title="Products"></div>
+                    <div class="_desc _after _watermark" title="Description"></div>
+                </div>
+                <div class="_left">
+                    <div class="_nav _watermark" title="Layered Navigation"></div>
+                    <div class="_blocks _watermark" title="Blocks"></div>
+                </div>
+                <div class="_right">
+                    <div class="_nav _watermark" title="Layered Navigation"></div>
+                    <div class="_blocks _watermark" title="Blocks"></div>
+                </div>
+                <div class="_desc _after _watermark" title="Description"></div>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+        <div class="_footer">
+            <div class="_footer-wrapper _watermark" title="Footer"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+require([
+    'Magento_Ui/js/lib/view/utils/async',
+    '!domReady'
+], function ($) {
+    var preview = $('#<?= $element->getHtmlId() ?>'),
+        tbody,
+        pageLayout,
+        contentWidth,
+        maxWidth;
+
+    /**
+     * Update page layout in mock-up
+     */
+    function updatePageLayout() {
+        $('._columns', preview)
+            .attr('class', '_columns ' + pageLayout.val().replace('themeeditor_page', ''));
+    }
+
+    /**
+     * Update content width in mock-up
+     */
+    function updateContentWidth() {
+        var width;
+
+        $('._content', preview)
+            .attr('class', '_content _' + contentWidth.val());
+        width = (contentWidth.val() === 'limited_width') ? maxWidth.val() : 0;
+        $('._columns', preview).attr('style', width ? ('max-width: ' + (width / 1920 * 100) + '%') : '');
+    }
+
+    tbody = preview.closest('tbody');
+
+    /**
+     * Description position
+     */
+    $.async({
+        selector: '[name$="[description_position][value]"]',
+        ctx: tbody.get(0)
+    }, function (descriptionPosition) {
+        /**
+         * Preview updater
+         */
+        function update() {
+            var value = $(descriptionPosition).val() ?
+                $(descriptionPosition).val() :
+                '<?= $block->getDescriptionPosition() ?>';
+
+            preview.attr('data-description-position', value);
+        }
+
+        update();
+        $(descriptionPosition).change(update);
+    });
+
+    /**
+     * Layered Navigation position
+     */
+    $.async({
+        selector: '[name$="[layered_navigation_position][value]"]',
+        ctx: tbody.get(0)
+    }, function (layeredNavigationPosition) {
+        /**
+         * Preview updater
+         */
+        function update() {
+            var value = $(layeredNavigationPosition).val() ?
+                $(layeredNavigationPosition).val() :
+                '<?= $block->getLayeredNavigationPosition() ?>';
+
+            preview.attr('data-layered-navigation-position', value);
+        }
+
+        update();
+        $(layeredNavigationPosition).change(update);
+    });
+
+    pageLayout = $('[name$="[page_layout][value]"]', tbody);
+    contentWidth = $('[name$="[content_width][value]"]', tbody);
+    maxWidth = $('[name$="[max_width][value]"]', tbody);
+    updatePageLayout();
+    updateContentWidth();
+    pageLayout.change(updatePageLayout);
+    contentWidth.change(updateContentWidth);
+    maxWidth.on('change paste keyup', updateContentWidth);
+});
+</script>

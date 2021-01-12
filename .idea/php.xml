@@ -540,6 +540,13 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
       <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
       <path value="$PROJECT_DIR$/vendor/sebastian/finder-facade" />
+      <path value="$PROJECT_DIR$/vendor/swissup/theme-frontend-absolute" />
+      <path value="$PROJECT_DIR$/vendor/swissup/module-font-awesome" />
+      <path value="$PROJECT_DIR$/vendor/swissup/module-slick-carousel" />
+      <path value="$PROJECT_DIR$/vendor/swissup/module-theme-editor" />
+      <path value="$PROJECT_DIR$/vendor/swissup/module-theme-editor-swissup-absolute" />
+      <path value="$PROJECT_DIR$/vendor/swissup/module-codemirror" />
+      <path value="$PROJECT_DIR$/vendor/swissup/module-core" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0">
